@@ -12,4 +12,4 @@ Russian and Cyrillic Domains on nic.ru: [nic.ru domains](https://www.nic.ru/en/c
 
 ## Usernames
 
-xx_shodan_squeegee_usernames.txt - Country specific shodan RDP scraping results
+xx_shodan_squeegee_usernames.txt - Country specific shodan RDP scraping results.
