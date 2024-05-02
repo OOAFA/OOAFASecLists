@@ -18,10 +18,11 @@ How we translated the wordlists:
 * Helsinki-NLP/opus-mt-en-uk: english to ukranian
 * Helsinki-NLP/opus-mt-en-zh: english to chinese
 * Helsinki-NLP/opus-mt-en-ar: english to arabic
-2. Each word from fed in batches to the translator pipeline after initialization the pre-trained model
+2. Each word from fed in batches to the translator pipeline after initializing the pre-trained model.
 3. For each translated word, if there was no specific translation, or a space existed then the word was rejected.
 4. For each translated word, if the result was only in the "latin" alphabet, then it was rejected as "not translated".
 5. The translated word was then written to disk.
+* Note: for performance improvements, the translation was executed on a Nvidia/Cuda enabled RTX-3070 GPU card.
 
 ## Usernames
 
