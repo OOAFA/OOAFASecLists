@@ -29,4 +29,4 @@ xx_shodan_squeegee_usernames.txt - Country specific shodan RDP scraping results.
 
 xato converted.
 
-Coming soon .. Russian per-TLD Public Data Breach Lists
+Coming soon .. per-TLD and language public data breach lists
