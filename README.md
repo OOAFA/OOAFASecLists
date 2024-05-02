@@ -14,12 +14,14 @@ Russian and Cyrillic Domains on nic.ru: [nic.ru domains](https://www.nic.ru/en/c
 
 How we translated the wordlists:
 
-1. Used an AI model from huggingface.co called "glazzova/ml_translation_model1".  This model was fine tuned from another model from Helsinki.  
-2. Batched up the english text into comma separated batches of data around 460 chars in length.  Think of them as word lists.
-3. Translated each word list into RU through the AI model application on a GPU enabled machine.
-4. FOR EACH word in the resulting list....
-4.1 If the word did not translate into RU, or there was a space in the end result, the translation was rejected. I used a latin-1 encoder to determine if the word was pure latin chars or NOT.. if NOT latin chars, I consider it to be RU.
-4.2 Checked if the word was in the "already translated" list.  If not, wrote the new word to disk as a translated entity.
+1. Using Hugging Face, we located several different models for language translation. Some examples as follows:
+* Helsinki-NLP/opus-mt-en-uk: english to ukranian
+* Helsinki-NLP/opus-mt-en-zh: english to chinese
+* Helsinki-NLP/opus-mt-en-ar: english to arabic
+2. Each word from fed in batches to the translator pipeline after initialization the pre-trained model
+3. For each translated word, if there was no specific translation, or a space existed then the word was rejected.
+4. For each translated word, if the result was only in the "latin" alphabet, then it was rejected as "not translated".
+5. The translated word was then written to disk.
 
 ## Usernames
 
